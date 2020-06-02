@@ -43,8 +43,7 @@
     "react-dom": "^16.13.1"
   },
   "files": [
-    "build",
-    "dist",
+    "lib",
     "README.md"
   ],
   "devDependencies": {
