@@ -1,8 +1,6 @@
 import { Button, message, Spin } from 'antd';
 import React, { useDebugValue, useEffect, useState } from 'react';
-import { synthesizeText } from './mockServer';
 import { AudioPlayer, playBuffers } from './playback';
-// import './styles.css';
 import { AdvancedTap, extractWithBuffers, fileToTape } from './utils';
 import { WaveList } from './WaveList';
 import { WordList } from './WordList';
@@ -10,7 +8,8 @@ import { WordList } from './WordList';
 
 export const WaveWords = ({
     src,
-    alignments
+    alignments, 
+    synthesizeText
 }) => {
 
     // console.log("start rendering waveWords");
@@ -21,7 +20,7 @@ export const WaveWords = ({
     const [loading, setLoading] = useState(false) // extraction of the buffers
 
 
-    const [progressDebug, setProgressDebug] = useState(0) // extraction of the buffers
+    // const [progressDebug, setProgressDebug] = useState(0) // extraction of the buffers
 
     const [playingSources, setPlayingSources] = useState({}); // playing of individual sources alone
     // const [seriesSources, setSeriesSource] = useState([])
@@ -106,7 +105,7 @@ export const WaveWords = ({
                     // tapes[wordIndex].words = { ...tapes[wordIndex].words, progress: progress }
                     tapes[wordIndex].aloneProgress = progress
                     setTapes([...tapes])
-                    setProgressDebug(progress)
+                    // setProgressDebug(progress)
                 }, step)
                 break;
             case "stop":

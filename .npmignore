@@ -1,4 +1,8 @@
 src
 demo
+build
 .babelrc
 webpack.config.js
+rollup.config.js
+jsconfig.json
+yarn.lock
